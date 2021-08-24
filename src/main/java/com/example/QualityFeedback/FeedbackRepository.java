@@ -1,4 +1,4 @@
-package com.example.QuailtyFeedback;
+package com.example.QualityFeedback;
 
 import org.springframework.data.repository.CrudRepository;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.example.QuailtyFeedback;
+package com.example.QualityFeedback;
 
 import javax.persistence.*;
 

@@ -1,4 +1,4 @@
-package com.example.QuailtyFeedback;
+package com.example.QualityFeedback;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
