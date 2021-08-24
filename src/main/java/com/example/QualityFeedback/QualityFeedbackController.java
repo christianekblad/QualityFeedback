@@ -40,7 +40,8 @@ public class QualityFeedbackController {
     public String set(@ModelAttribute Feedback feedback) {
         feedback.setDateSubmitted(LocalDate.now().toString());
         feedbackRepository.save(feedback);
-        return "redirect:/feedbacks";
+        //return "redirect:/thankYou";
+        return "thankYou";
     }
 
     @GetMapping("/edit/{id}") // used when the edit link is clicked
