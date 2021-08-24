@@ -19,7 +19,6 @@ public class Feedback {
     Integer seam;
     Integer print;
     Integer shrinkage;
-    Integer durability;
     Integer material;
     String comment;
     @Column(name ="DATESUBMITTED")
@@ -28,7 +27,7 @@ public class Feedback {
     public Feedback() {
     }
 
-    public Feedback(Integer productNumber, String garmentType, Integer ageOfGarment, Integer levelOfUse, Integer color, Integer seam, Integer print, Integer shrinkage, Integer durability, Integer material, String comment, String dateSubmitted) {
+    public Feedback(Integer productNumber, String garmentType, Integer ageOfGarment, Integer levelOfUse, Integer color, Integer seam, Integer print, Integer shrinkage, Integer material, String comment, String dateSubmitted) {
         this.productNumber = productNumber;
         this.garmentType = garmentType;
         this.ageOfGarment = ageOfGarment;
@@ -37,7 +36,6 @@ public class Feedback {
         this.seam = seam;
         this.print = print;
         this.shrinkage = shrinkage;
-        this.durability = durability;
         this.material = material;
         this.comment = comment;
         this.dateSubmitted = dateSubmitted;
@@ -113,14 +111,6 @@ public class Feedback {
 
     public void setShrinkage(Integer shrinkage) {
         this.shrinkage = shrinkage;
-    }
-
-    public Integer getDurability() {
-        return durability;
-    }
-
-    public void setDurability(Integer durability) {
-        this.durability = durability;
     }
 
     public Integer getMaterial() {
