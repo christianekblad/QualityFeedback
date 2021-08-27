@@ -40,6 +40,12 @@
 <!-- List all Quality feedback -->
 <div style="width:95%; margin:0 auto;">
     <br><h2>&nbsp;All feedbacks</h2>
+    <form action="/feedbacksByProductID" method="get">
+        <label for="productNumber">Product Number:</label><br>
+        <input type="text" id="productNumber" name="productNumber"><br>
+        <input type="submit" value="Submit">
+        <button type="submit" formaction="/feedbacks">Reset</button>
+    </form>
 <table class="table table-striped table-condensed">
     <thead>
     <tr>
@@ -60,7 +66,8 @@
 
     <tr th:each="feedback : ${feedbacks}">
         <th th:text="${feedback.id}"></th>
-        <th th:text="${feedback.productNumber}"></th>
+        <!-- <th th:text="${feedback.productNumber}"></th> -->
+        <th><a th:href="@{'/feedbacksByProductID?productNumber=' + ${feedback.productNumber}}" th:text="${feedback.productNumber}"></a></th>
         <th th:text="${feedback.garmentType}"></th>
         <th th:text="${feedback.ageOfGarment}"></th>
         <th th:text="${feedback.levelOfUse}"></th>
