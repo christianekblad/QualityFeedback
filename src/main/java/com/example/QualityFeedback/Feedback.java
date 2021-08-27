@@ -2,6 +2,10 @@ package com.example.QualityFeedback;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+// Object Feedback, to be stored in database, holds a piece of quality feedback on one specific product in H&M's assortment.
+// The product is identified by the product number, which is found on the care label of a garment.
+// We want many customers to be able to give feedback on the same product
+// The primary key is a unique, automatically generated id.
 
 @Entity
 public class Feedback {
@@ -40,14 +44,6 @@ public class Feedback {
         this.material = material;
         this.comment = comment;
         this.dateSubmitted = dateSubmitted;
-    }
-
-    public boolean isNew(){
-        return this.id == null;
-    }
-
-    public static String testOfReporters1() {
-        return "";
     }
 
     public Integer getProductNumber() {
@@ -134,10 +130,10 @@ public class Feedback {
         return dateSubmitted;
     }
 
+// Date submitted is always set automatically to the current date.
     public void setDateSubmitted(String dateSubmitted) {
         this.dateSubmitted = dateSubmitted;
     }
-
 
     public Long getId() {
         return id;

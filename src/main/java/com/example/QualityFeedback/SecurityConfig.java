@@ -12,6 +12,9 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+// Security configuration allowing everyone to enter and save Quality feedback,
+// but only users with ADMIN role to list and explore the collected Quality feedback.
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http

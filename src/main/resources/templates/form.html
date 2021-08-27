@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Form for customers to enter Quality feedback for H&M's products. -->
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 </head>
 <body>
+
+<!-- Navigation bar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Menu</a>
@@ -31,11 +34,28 @@
         </div>
     </div>
 </nav>
+
+<!-- Application -->
 <div class="px-4 py-2 my-2 text-left">
     <h2 class="display-5 fw-bold">Give Feedback</h2>
     <form action="/saveFeedback" th:object="${feedback}" method="POST">
         <b>Product Number:</b><br><input type="text" size="28" th:field="*{productNumber}" required><br><br>
-        <b>Garment Type:</b><br><input type="text" size="28" th:field="*{garmentType}" required><br><br>
+
+        <b>Garment Type:</b><br>
+        <select th:field="*{garmentType}" style="width:257px" required>
+            <option value="">Please select type of garment</option>
+            <option value="Blouse">   Blouse </option>
+            <option value="Dress">   Dress </option>
+            <option value="Nightwear">   Nightwear </option>
+            <option value="Shoes">   Shoes </option>
+            <option value="Shorts">   Shorts </option>
+            <option value="Sweatshirt or Hoodie">   Sweatshirt or Hoodie </option>
+            <option value="Trousers">   Trousers </option>
+            <option value="T-shirt">   T-shirt </option>
+            <option value="Underwear">   Underwear </option>
+        </select><br><br>
+
+<!-- Age of Garment - selected with radio buttons -->
         <b>Age of Garment:</b><br>
         <input type="radio" id="age1" name="age" value="1" th:field="*{ageOfGarment}">
         <label for="age1">New&nbsp;&nbsp;&nbsp;</label>
@@ -48,6 +68,7 @@
         <input type="radio" id="age5" name="age" value="5" th:field="*{ageOfGarment}">
         <label for="age5">+12 months&nbsp;&nbsp;&nbsp;</label><br><br>
 
+<!-- Level of Use - selected with radio buttons -->
         <b>Level of Use:</b><br>
         <input type="radio" id="levelOfUse1" name="levelOfUse1" value="1" th:field="*{levelOfUse}">
         <label for="levelOfUse1">Never&nbsp;&nbsp;&nbsp;</label>
@@ -60,6 +81,7 @@
         <input type="radio" id="levelOfUse5" name="levelOfUse5" value="5" th:field="*{levelOfUse}">
         <label for="levelOfUse5">+20 times</label><br><br>
 
+<!-- Quality messurements, allow input of values 1, 2, 3, 4 or 5 -->
         <b>Color:</b><br>
         Poor <input type="range" style="width: 500px;" id="color" name="color" min="1" max="5" th:field="*{color}"> Great<br><br>
         <b>Seam:</b><br>
@@ -72,6 +94,7 @@
         Poor <input type="range" style="width: 500px;" id="material" name="material" min="1" max="5" th:field="*{material}"> Great <br><br>
         <b>Comment:</b><br><textarea rows="3" cols="73" name="comment" th:field="*{comment}"></textarea><br><br>
 
+<!-- Button to save Quality feedback -->
         <input type="submit" class="btn btn-primary btn-lg px-4 me-sm-3" value="Save">
     </form>
 </div>
