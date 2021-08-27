@@ -56,20 +56,20 @@
         </select><br><br>
 
 <!-- Age of Garment - selected with radio buttons -->
-        <b>Age of Garment:</b><br>
+        <b>When did you buy this garment?</b><br>
         <input type="radio" id="age1" name="age" value="1" th:field="*{ageOfGarment}">
-        <label for="age1">New&nbsp;&nbsp;&nbsp;</label>
+        <label for="age1">It is new&nbsp;&nbsp;&nbsp;</label>
         <input type="radio" id="age2" name="age" value="2" th:field="*{ageOfGarment}">
-        <label for="age2">1-3 months&nbsp;&nbsp;&nbsp;</label>
+        <label for="age2">1-3 months ago&nbsp;&nbsp;&nbsp;</label>
         <input type="radio" id="age3" name="age" value="3" th:field="*{ageOfGarment}">
-        <label for="age3">3-6 months&nbsp;&nbsp;&nbsp;</label>
+        <label for="age3">3-6 months ago&nbsp;&nbsp;&nbsp;</label>
         <input type="radio" id="age4" name="age" value="4" th:field="*{ageOfGarment}">
-        <label for="age4">6-12 months&nbsp;&nbsp;&nbsp;</label>
+        <label for="age4">6-12 months ago&nbsp;&nbsp;&nbsp;</label>
         <input type="radio" id="age5" name="age" value="5" th:field="*{ageOfGarment}">
-        <label for="age5">+12 months&nbsp;&nbsp;&nbsp;</label><br><br>
+        <label for="age5">+12 months ago&nbsp;&nbsp;&nbsp;</label><br><br>
 
 <!-- Level of Use - selected with radio buttons -->
-        <b>Level of Use:</b><br>
+        <b>How many times have you used this garment?</b><br>
         <input type="radio" id="levelOfUse1" name="levelOfUse1" value="1" th:field="*{levelOfUse}">
         <label for="levelOfUse1">Never&nbsp;&nbsp;&nbsp;</label>
         <input type="radio" id="levelOfUse2" name="levelOfUse2" value="2" th:field="*{levelOfUse}">
@@ -82,6 +82,8 @@
         <label for="levelOfUse5">+20 times</label><br><br>
 
 <!-- Quality messurements, allow input of values 1, 2, 3, 4 or 5 -->
+        <h5>How do you perceive the quality of the garment based on below: </h5><br>
+
         <b>Color:</b><br>
         Poor <input type="range" style="width: 500px;" id="color" name="color" min="1" max="5" th:field="*{color}"> Great<br><br>
         <b>Seam:</b><br>
