@@ -27,11 +27,8 @@
                     <form th:action="@{/logout}" method="post" th:hidden="true" name="logoutForm">
                         <input type="submit" value="Logout" />
                     </form>
-                <!--    <a class="nav-link" href="javascript: document.logoutForm.submit()">Logout</a> -->
                 </li>
-              <!--  <li class="nav-item">
-                    <a class="nav-link" th:text="${'Logged in as ' + #httpServletRequest.remoteUser}"></a>
-                </li> -->
+
             </ul>
         </div>
     </div>
@@ -42,11 +39,11 @@
     <h2 class="display-5 fw-bold">Give Feedback</h2>
     <form action="/saveFeedback" th:object="${feedback}" method="POST">
         <b>Product Number:</b><br><input type="text" size="28" th:field="*{productNumber}" required><br><br>
-
+        <img src="./careLabel.jpg" width="150"><br>
         <b>Garment Type:</b><br>
         <select th:field="*{garmentType}" style="width:257px" required>
             <option value="">Please select type of garment</option>
-            <option value="Blouse">   Blouse </option>
+            <option value="Shirts & Blouses">   Shirts & Blouses </option>
             <option value="Dress">   Dress </option>
             <option value="Nightwear">   Nightwear </option>
             <option value="Shoes">   Shoes </option>

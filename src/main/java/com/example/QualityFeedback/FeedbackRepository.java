@@ -8,6 +8,6 @@ import java.util.List;
 public interface FeedbackRepository extends CrudRepository<Feedback, Long> {
     List<Feedback> findAll();
 
-    List<Feedback> findByproductNumberEquals(int i);
+    List<Feedback> findByproductNumberEquals(String i);
 
 }

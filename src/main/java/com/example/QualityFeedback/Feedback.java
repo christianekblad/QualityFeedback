@@ -13,7 +13,7 @@ public class Feedback {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     @Column(name ="PRODUCTNUMBER")
-    Integer productNumber;
+    String productNumber;
     @Column(name ="GARMENTTYPE")
     String garmentType;
     @Column(name ="AGEOFGARMENT")
@@ -32,7 +32,7 @@ public class Feedback {
     public Feedback() {
     }
 
-    public Feedback(Integer productNumber, String garmentType, Integer ageOfGarment, Integer levelOfUse, Integer color, Integer seam, Integer print, Integer shrinkage, Integer material, String comment, String dateSubmitted) {
+    public Feedback(String productNumber, String garmentType, Integer ageOfGarment, Integer levelOfUse, Integer color, Integer seam, Integer print, Integer shrinkage, Integer material, String comment, String dateSubmitted) {
         this.productNumber = productNumber;
         this.garmentType = garmentType;
         this.ageOfGarment = ageOfGarment;
@@ -46,11 +46,11 @@ public class Feedback {
         this.dateSubmitted = dateSubmitted;
     }
 
-    public Integer getProductNumber() {
+    public String getProductNumber() {
         return productNumber;
     }
 
-    public void setProductNumber(Integer productNumber) {
+    public void setProductNumber(String productNumber) {
         this.productNumber = productNumber;
     }
 

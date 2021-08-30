@@ -37,8 +37,9 @@ public class QualityFeedbackController {
         return "feedbacks";
     }
 
+// Page listing all received Quality feedback for a selected Product number.
     @GetMapping("/feedbacksByProductID")
-    public String feedbacksByProductID(Model model, @RequestParam Integer productNumber) {
+    public String feedbacksByProductID(Model model, @RequestParam String productNumber) {
         List<Feedback> feedbacks = (List<Feedback>) feedbackRepository.findByproductNumberEquals(productNumber);
         model.addAttribute("feedbacks", feedbacks);
         return "feedbacks";
@@ -50,14 +51,6 @@ public class QualityFeedbackController {
         feedback.setDateSubmitted(LocalDate.now().toString());
         feedbackRepository.save(feedback);
         return "thankYou";
-    }
-
-// Do not think we need this ????????????????????????????????????????????????????????????????
-    @GetMapping("/edit/{id}") // used when the edit link is clicked
-    public String edit(Model model, @PathVariable Long id) {
-        Feedback feedback = feedbackRepository.findById(id).get();
-        model.addAttribute(feedback);
-        return "form";
     }
 
 // Admin user login out
