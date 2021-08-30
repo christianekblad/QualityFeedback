@@ -38,8 +38,23 @@
 <div class="px-4 py-2 my-2 text-left">
     <h2 class="display-5 fw-bold">Give Feedback</h2>
     <form action="/saveFeedback" th:object="${feedback}" method="POST">
-        <b>Product Number (P/N): </b><a href="productNumHelp.html" target="_blank">?</a><br>
-        <input type="text" size="28" th:field="*{productNumber}" required><br><br>
+
+        <!--img src="../static/images/carelabel.jpg" th:src="'/images/carelabel.jpg'" alt="Cannot display image"-->
+
+
+
+
+        <b>Product Number (P/N): </b>
+        <a href="../static/images/productNumHelp.html" th:href="'/images/productNumHelp.html'" onclick="javascript:void window.open('/images/productNumHelp.html','1630325025338','width=600,height=600,toolbar=0,menubar=0,location=0,status=0,scrollbars=0,resizable=1,left=0,top=0');return false;"><img src="https://cdn.icon-icons.com/icons2/1674/PNG/512/questionmarkcircle_110957.png" width="25px"></a>
+
+        <!--<b>Product Number (P/N): </b><a href="../static/images/productNumHelp.html" th:href="'/images/productNumHelp.html'"target="_blank">?</a><br>-->
+        <br><input type="text" size="28" th:field="*{productNumber}" required><br><br>
+
+
+
+
+
+
         <b>Garment Type:</b><br>
         <select th:field="*{garmentType}" style="width:257px" required>
             <option value="">Please select type of garment</option>
