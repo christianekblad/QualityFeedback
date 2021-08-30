@@ -38,8 +38,8 @@
 <div class="px-4 py-2 my-2 text-left">
     <h2 class="display-5 fw-bold">Give Feedback</h2>
     <form action="/saveFeedback" th:object="${feedback}" method="POST">
-        <b>Product Number:</b><br><input type="text" size="28" th:field="*{productNumber}" required><br><br>
-        <img src="./careLabel.jpg" width="150"><br>
+        <b>Product Number (P/N): </b><a href="productNumHelp.html" target="_blank">?</a><br>
+        <input type="text" size="28" th:field="*{productNumber}" required><br><br>
         <b>Garment Type:</b><br>
         <select th:field="*{garmentType}" style="width:257px" required>
             <option value="">Please select type of garment</option>

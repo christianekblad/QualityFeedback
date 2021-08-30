@@ -7,7 +7,7 @@ To do :
 - User should be able to submit feedback.Add a tab on homepage screen, no login required - Done
 
 Friday:
-  - Add the second sustainability link on thank you page- Done
+- Add the second sustainability link on thank you page- Done
 - Presentation for Monday morning : 11 - 12 
   -Search for 1 product - Christian -  done
 - Make it more H&M look - Done
