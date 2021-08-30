@@ -16,12 +16,14 @@ Friday:
   Pictures for the home page - Done
 
 Week 35:
-- Need to adjust the menu bar tabs - check the links
-- Validation on the Age of Garment and Level of usage are clicked
-- Test cases to be added:
+- Need to adjust the navigation bar. Check the links (blue before login and grey after login )- Andreas (Tuesday morning)
+- Product number (now it is a new page. We want a popup) - Mija and Christian
+- Validation on the Age of Garment and Level of usage are clicked - Neha and Annica
 - Prepare the pitch 
-  -Analyzing the input data received
+- Analyzing the input data received - Check with Andreas (Tuesday morning)
+
   
 Week 36:
+- Test cases to be added:
 - Final Presentation:connection to sustainability (on website and PPT)
 - Deploy to Azure 
