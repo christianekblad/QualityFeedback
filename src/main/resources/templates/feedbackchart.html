@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<body>
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+<p id=colorAvg th:text="${feedbackAverage.colorAverage}"></p>
+<p id=seamAvg th:text="${feedbackAverage.seamAverage}"></p>
+<p id=printAvg th:text="${feedbackAverage.printAverage}"></p>
+<p id=shrinkageAvg th:text="${feedbackAverage.shrinkageAverage}"></p>
+<p id=materialAvg th:text="${feedbackAverage.materialAverage}"></p>
+
+<script>
+
+var xValues = ["Color","Seam","Print","Shrinkage","Material"];
+
+var colorAvg = document.getElementById("colorAvg").value;
+var seamAvg = document.getElementById("seamAvg").value;
+var printAvg = document.getElementById("printAvg").value;
+var shrinkageAvg = document.getElementById("shrinkageAvg").value;
+var materialAvg = document.getElementById("materialAvg").value;
+
+console.log("ColorAvg "+colorAvg);
+console.log(seamAvg);
+console.log(printAvg);
+console.log(shrinkageAvg);
+console.log(materialAvg);
+
+var yValues = [colorAvg,seamAvg,printAvg,shrinkageAvg,materialAvg];
+var yValues = [1,2,3,4,5];
+
+new Chart("myChart", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      fill: false,
+      lineTension: 0,
+      backgroundColor: "rgba(0,0,255,1.0)",
+      borderColor: "rgba(0,0,255,0.1)",
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    scales: {
+      yAxes: [{ticks: {min: 0, max:5}}],
+    }
+  }
+});
+</script>
+<table>
+<tr th:each="feedback : ${feedbacks}">
+    <!-- <th th:text="${feedback.id}"></th> -->
+    <th><a class="link-dark" th:href="@{'/feedbacksByProductID?productNumber=' + ${feedback.productNumber}}" th:text="${feedback.productNumber}"></a></th>
+    <th th:text="${feedback.garmentType}"></th>
+    <th th:text="${feedback.ageOfGarment}"></th>
+    <th th:text="${feedback.levelOfUse}"></th>
+    <th th:text="${feedback.color}"></th>
+    <th th:text="${feedback.seam}"></th>
+    <th th:text="${feedback.print}"></th>
+    <th th:text="${feedback.shrinkage}"></th>
+    <th th:text="${feedback.material}"></th>
+    <th th:text="${feedback.comment}"></th>
+    <th th:text="${feedback.dateSubmitted}"></th>
+
+</tr>
+</table>
+</body>
+</html>
