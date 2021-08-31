@@ -16,22 +16,22 @@
 <!-- Navigation bar -->
 <nav class="navbar navbar-expand-lg navbar-white bg-white">
     <div class="container-fluid">
-        <img src="https://logos-world.net/wp-content/uploads/2020/04/HM-Logo.png" alt="Cannot display image" width="100px">
+        <a href="/"><img src="https://logos-world.net/wp-content/uploads/2020/04/HM-Logo.png" alt="H&M Logo" width="100px"></a>
       <!--  <a class="navbar-brand" href="#">Menu</a> -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a class="nav-link" href="/form">ENTER FEEDBACK</a></li>
+                <li class="nav-item"><a class="nav-link link-secondary hover_black" href="/form">GIVE FEEDBACK</a></li>
                 <li class="nav-item">
                     <form th:action="@{/logout}" method="post" th:hidden="true" name="logoutForm">
                         <input type="submit" value="Logout" />
                     </form>
-                    <a class="nav-link" href="javascript: document.logoutForm.submit()">LOGOUT</a>
+                    <a class="nav-link link-secondary hover_black" href="javascript: document.logoutForm.submit()">LOGOUT</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:text="${'Logged in as ' + #httpServletRequest.remoteUser}"></a>
+                    <a class="nav-link link-secondary hover_black" th:text="${'LOGGED IN AS: ' + #httpServletRequest.remoteUser}"></a>
                 </li>
             </ul>
         </div>
@@ -40,7 +40,6 @@
 </nav>
 
 <!-- List all Quality feedback -->
-
 <div style="width:95%; margin:0 auto;">
     <br><h2>&nbsp;All feedbacks</h2>
     <form action="/feedbacksByProductID" method="get">
@@ -69,7 +68,7 @@
 
     <tr th:each="feedback : ${feedbacks}">
        <!-- <th th:text="${feedback.id}"></th> -->
-        <th><a th:href="@{'/feedbacksByProductID?productNumber=' + ${feedback.productNumber}}" th:text="${feedback.productNumber}"></a></th>
+        <th><a class="link-dark" th:href="@{'/feedbacksByProductID?productNumber=' + ${feedback.productNumber}}" th:text="${feedback.productNumber}"></a></th>
         <th th:text="${feedback.garmentType}"></th>
         <th th:text="${feedback.ageOfGarment}"></th>
         <th th:text="${feedback.levelOfUse}"></th>
@@ -80,7 +79,6 @@
         <th th:text="${feedback.material}"></th>
         <th th:text="${feedback.comment}"></th>
         <th th:text="${feedback.dateSubmitted}"></th>
-
     </tr>
 </table>
 </div>

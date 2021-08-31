@@ -25,7 +25,10 @@ public class QualityFeedbackController {
 // Form for customers to enter Quality feedback for H&M's products.
     @GetMapping("/form")
     public String add(Model model) {
-        model.addAttribute("feedback", new Feedback());
+        Feedback feedback = new Feedback();
+        feedback.ageOfGarment = 1;
+        feedback.levelOfUse = 1;
+        model.addAttribute("feedback", feedback);
         return "form";
     }
 

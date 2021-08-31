@@ -130,16 +130,12 @@ public class Feedback {
         return dateSubmitted;
     }
 
+    public Long getId() { return id; }
+
+    public void setId(Long id) { this.id = id; }
+
 // Date submitted is always set automatically to the current date.
     public void setDateSubmitted(String dateSubmitted) {
         this.dateSubmitted = dateSubmitted;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 }
