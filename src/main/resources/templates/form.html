@@ -6,8 +6,11 @@
     <title>Give Garment Quality Feedback</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+            crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../static/stylecart.css" th:href="'/stylecart.css'">
     <style>
         body {
@@ -15,27 +18,40 @@
         }
 
     </style>
+    <script>
+    function validateForm() {
+      console.log("Hello");
+      var x = document.forms["myForm"]["prodnum"].value;
+      if (x == "" || x == null) {
+        alert("Product Number must be filled out");
+        return false;
+      }
+    }
+    </script>
 </head>
 <body>
 
 <!-- Navigation bar, only the H&M logo on this page -->
 <nav class="navbar navbar-expand-lg navbar-white bg-white">
     <div class="container-fluid">
-        <a href="/"><img src="https://logos-world.net/wp-content/uploads/2020/04/HM-Logo.png" alt="H&M Logo" width="100px"></a>
+        <a href="/"><img src="https://logos-world.net/wp-content/uploads/2020/04/HM-Logo.png" alt="H&M Logo"
+                         width="100px"></a>
     </div>
 </nav>
 
 <!-- Application -->
 <div class="px-4 py-2 my-2 text-left">
     <h2 class="display-5 fw-bold">Give Feedback</h2>
-    <form action="/saveFeedback" th:object="${feedback}" method="POST">
+    <form name="myForm" action="/saveFeedback" th:object="${feedback}" onsubmit="return validateForm()" method="POST" >
         <b>Product Number (P/N): </b>
-        <a href="../static/images/productnumhelp.html" th:href="'/images/productnumhelp.html'" onclick="javascript:void window.open('/images/productnumhelp.html','1630325025338','width=600,height=600,toolbar=0,menubar=0,location=0,status=0,scrollbars=0,resizable=1,left=0,top=0');return false;"><img src="https://cdn.icon-icons.com/icons2/1674/PNG/512/questionmarkcircle_110957.png" width="25px"></a>
-        <br><input type="text" size="28" th:field="*{productNumber}" required><br><br>
+        <a href="../static/images/productnumhelp.html" th:href="'/images/productnumhelp.html'"
+           onclick="javascript:void window.open('/images/productnumhelp.html','1630325025338','width=600,height=600,toolbar=0,menubar=0,location=0,status=0,scrollbars=0,resizable=1,left=0,top=0');return false;"><img
+                src="https://cdn.icon-icons.com/icons2/1674/PNG/512/questionmarkcircle_110957.png" width="25px"></a>
+        <br><input type="text" size="28" minlength="7" maxlength="10" th:field="*{productNumber}" name="prodnum" required><br><br>
         <b>Garment Type:</b><br>
         <select th:field="*{garmentType}" style="width:257px" required>
             <option value="">Please select type of garment</option>
-            <option value="Shirts & Blouses">   Shirts & Blouses </option>
+            <option value="Shirts & Blouses"> Shirts & Blouses</option>
             <option value="Dress">Dress</option>
             <option value="Nightwear">Nightwear</option>
             <option value="Shoes">Shoes</option>
@@ -46,7 +62,7 @@
             <option value="Underwear">Underwear</option>
         </select><br><br>
 
-<!-- Age of Garment - selected with radio buttons -->
+        <!-- Age of Garment - selected with radio buttons -->
         <b>When did you buy this garment?</b><br>
         <input type="radio" id="age1" name="age" value="New" th:field="*{ageOfGarment}">
         <label for="age1">It is new&nbsp;&nbsp;&nbsp;</label>
@@ -59,9 +75,9 @@
         <input type="radio" id="age5" name="age" value="+12" th:field="*{ageOfGarment}">
         <label for="age5">+12 months ago&nbsp;&nbsp;&nbsp;</label><br><br>
 
-<!-- Level of Use - selected with radio buttons -->
+        <!-- Level of Use - selected with radio buttons -->
         <b>How many times have you used this garment?</b><br>
-        <input type="radio" id="levelOfUse1" name="levelOfUse1" value="Never" th:field="*{levelOfUse}" >
+        <input type="radio" id="levelOfUse1" name="levelOfUse1" value="Never" th:field="*{levelOfUse}">
         <label for="levelOfUse1">Never&nbsp;&nbsp;&nbsp;</label>
         <input type="radio" id="levelOfUse2" name="levelOfUse2" value="1-3" th:field="*{levelOfUse}">
         <label for="levelOfUse2">1-3 times&nbsp;&nbsp;&nbsp;</label>
@@ -72,21 +88,26 @@
         <input type="radio" id="levelOfUse5" name="levelOfUse5" value="+20" th:field="*{levelOfUse}">
         <label for="levelOfUse5">+20 times</label><br><br>
 
-<!-- Quality measurements, allow input of values 1, 2, 3, 4 or 5 -->
+        <!-- Quality measurements, allow input of values 1, 2, 3, 4 or 5 -->
         <h5>How do you perceive the quality of the garment based on below: </h5><br>
         <b>Color:</b><br>
-        Poor <input type="range" style="width: 500px;" id="color" name="color" min="1" max="5" th:field="*{color}"> Great<br><br>
+        Poor <input type="range" style="width: 500px;" id="color" name="color" min="1" max="5" th:field="*{color}">
+        Great<br><br>
         <b>Seam:</b><br>
-        Poor <input type="range" style="width: 500px;" id="seam" name="seam" min="1" max="5" th:field="*{seam}"> Great <br><br>
+        Poor <input type="range" style="width: 500px;" id="seam" name="seam" min="1" max="5" th:field="*{seam}"> Great
+        <br><br>
         <b>Print:</b><br>
-        Poor <input type="range" style="width: 500px;" id="print" name="print" min="1" max="5" th:field="*{print}"> Great <br><br>
+        Poor <input type="range" style="width: 500px;" id="print" name="print" min="1" max="5" th:field="*{print}">
+        Great <br><br>
         <b>Shrinkage:</b><br>
-        Poor <input type="range" style="width: 500px;" id="shrinkage" name="shrinkage" min="1" max="5" th:field="*{shrinkage}"> Great <br><br>
+        Poor <input type="range" style="width: 500px;" id="shrinkage" name="shrinkage" min="1" max="5"
+                    th:field="*{shrinkage}"> Great <br><br>
         <b>Material:</b><br>
-        Poor <input type="range" style="width: 500px;" id="material" name="material" min="1" max="5" th:field="*{material}"> Great <br><br>
+        Poor <input type="range" style="width: 500px;" id="material" name="material" min="1" max="5"
+                    th:field="*{material}"> Great <br><br>
         <b>Additional comments:</b><br><textarea rows="3" cols="73" name="comment" th:field="*{comment}"></textarea><br><br>
 
-<!-- Button to save Quality feedback -->
+        <!-- Button to save Quality feedback -->
         <input type="submit" class="btn btn-danger btn-lg px-4 me-sm-3" value="Save">
     </form>
 </div>
