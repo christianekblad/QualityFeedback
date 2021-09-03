@@ -19,14 +19,17 @@ Week 35:
 - Product number (now it is a new page. We want a popup) - Done
 - Need to adjust the navigation bar. Check the links (blue before login and grey after login )-Done
 - Validation on the Age of Garment and Level of usage are clicked - Done
-  - Validation on the Product Number tab to enter only numbers and 7 + digits
 - Prepare the pitch - Done
-- Analyzing the input data received - Check with Andreas (Tuesday morning)
+- Analyzing the input data received - Done
+
 - Feedbacks form should have Age of Garment as descriptive text instead of numbers, same for usage level.
-- Refactor thankYou.html and StyleChart.css to lower cases
+- Validation on the Product Number tab to enter only numbers and 7 + digits
 
   
 Week 36:
-- Test cases to be added:
-- Final Presentation:connection to sustainability (on website and PPT)
+
+- Final Presentation - Pictures (Why-page), Why did we select the 5 quality meassurements. 
+    - Presentation of the application - From a user perspective and a employee
+- Refactor thankYou.html and StyleChart.css to lower cases
 - Deploy to Azure 
+- Dress rehearsals
