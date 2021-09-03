@@ -17,9 +17,9 @@ public class Feedback {
     @Column(name ="GARMENTTYPE")
     String garmentType;
     @Column(name ="AGEOFGARMENT")
-    Integer ageOfGarment;
+    String ageOfGarment;
     @Column(name ="LEVELOFUSE")
-    Integer levelOfUse;
+    String levelOfUse;
     Integer color;
     Integer seam;
     Integer print;
@@ -32,7 +32,7 @@ public class Feedback {
     public Feedback() {
     }
 
-    public Feedback(String productNumber, String garmentType, Integer ageOfGarment, Integer levelOfUse, Integer color, Integer seam, Integer print, Integer shrinkage, Integer material, String comment, String dateSubmitted) {
+    public Feedback(String productNumber, String garmentType, String ageOfGarment, String levelOfUse, Integer color, Integer seam, Integer print, Integer shrinkage, Integer material, String comment, String dateSubmitted) {
         this.productNumber = productNumber;
         this.garmentType = garmentType;
         this.ageOfGarment = ageOfGarment;
@@ -62,19 +62,19 @@ public class Feedback {
         this.garmentType = garmentType;
     }
 
-    public Integer getAgeOfGarment() {
+    public String getAgeOfGarment() {
         return ageOfGarment;
     }
 
-    public void setAgeOfGarment(Integer ageOfGarment) {
+    public void setAgeOfGarment(String ageOfGarment) {
         this.ageOfGarment = ageOfGarment;
     }
 
-    public Integer getLevelOfUse() {
+    public String getLevelOfUse() {
         return levelOfUse;
     }
 
-    public void setLevelOfUse(Integer levelOfUse) {
+    public void setLevelOfUse(String levelOfUse) {
         this.levelOfUse = levelOfUse;
     }
 

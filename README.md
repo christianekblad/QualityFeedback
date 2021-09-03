@@ -22,7 +22,7 @@ Week 35:
 - Prepare the pitch - Done
 - Analyzing the input data received - Done
 
-- Feedbacks form should have Age of Garment as descriptive text instead of numbers, same for usage level.
+- Feedbacks form should have Age of Garment as descriptive text instead of numbers, same for usage level. -Done
 - Validation on the Product Number tab to enter only numbers and 7 + digits
 
   
