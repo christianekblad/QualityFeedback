@@ -44,16 +44,10 @@ public class QualityFeedbackController {
     @GetMapping("/feedbacksByProductID")
     public String feedbacksByProductID(Model model, @RequestParam String productNumber) {
         List<Feedback> feedbacks = (List<Feedback>) feedbackRepository.findByproductNumberEquals(productNumber);
-        model.addAttribute("feedbacks", feedbacks);
+        model.addAttribute("productNumber", productNumber);
         FeedbackAverage feedbackAverage = new FeedbackAverage(feedbacks);
         model.addAttribute("feedbackAverage", feedbackAverage);
-        System.out.println(feedbackAverage.colorAverage);
-        System.out.println(feedbackAverage.seamAverage);
-        System.out.println(feedbackAverage.printAverage);
-        System.out.println(feedbackAverage.shrinkageAverage);
-        System.out.println(feedbackAverage.materialAverage);
-        System.out.println(feedbackAverage.noOfFeedbacks);
-//        return "feedbacks";
+//      return "feedbacks";
         return "feedbackchart";
     }
 

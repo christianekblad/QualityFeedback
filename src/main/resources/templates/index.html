@@ -6,24 +6,47 @@
     <meta charset="UTF-8">
     <title>Garment Quality Feedback</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+            crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../static/StyleCart.css" th:href="'/StyleCart.css'">
+
+    <style>
+        body {
+            background-image: url('https://d2908q01vomqb2.cloudfront.net/9e6a55b6b4563e652a23be9d623ca5055c356940/2020/11/16/Sustainability-scaled.jpg');
+            background-repeat: no-repeat;
+            filter: lightscale(100%);
+            font-family: "HM Sans Georgian Light", "HM Sans", Arial;
+        }
+        .boxwhite {
+            background-color: white;
+            }
+
+    </style>
+
 </head>
 <body>
 
 <!-- Navigation bar -->
 <nav class="navbar navbar-expand-lg navbar-white bg-white">
     <div class="container-fluid">
-        <a href="/"><img src="https://logos-world.net/wp-content/uploads/2020/04/HM-Logo.png" alt="H&M Logo" width="100px"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <a href="/"><img src="https://logos-world.net/wp-content/uploads/2020/04/HM-Logo.png" alt="H&M Logo"
+                         width="100px"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item"><a class="nav-link link-secondary hover_black" href="/form">GIVE FEEDBACK</a></li>
-                <li class="nav-item"><a class="nav-link link-secondary hover_black" href="https://www2.hm.com/en_gb/hm-sustainability/lets-change.html" target="_blank">SUSTAINABILITY</a></li>
-                <li class="nav-item"><a class="nav-link link-secondary hover_black" href="https://hmgroup.com/sustainability/" target="_blank">H&M GROUP SUSTAINABILITY</a></li>
+                <li class="nav-item"><a class="nav-link link-secondary hover_black"
+                                        href="https://www2.hm.com/en_gb/hm-sustainability/lets-change.html"
+                                        target="_blank">SUSTAINABILITY</a></li>
+                <li class="nav-item"><a class="nav-link link-secondary hover_black"
+                                        href="https://hmgroup.com/sustainability/" target="_blank">H&M GROUP
+                    SUSTAINABILITY</a></li>
                 <li class="nav-item"><a class="nav-link link-secondary hover_black" href="/feedbacks">LOGIN</a></li>
             </ul>
         </div>
@@ -33,15 +56,33 @@
 <!-- Application -->
 <div class="container">
     <div class="px-4 py-5 my-5 text-center">
-        <h1 class="display-5 fw-bold">Welcome to Garment Quality Feedback application</h1>
-        <img src="https://www.icex.es/icex/wcm/idc/groups/public/documents/imagen/mde4/nzk5/~edisp/img2018799073.jpg" alt="Cannot display image" width="500px">
-        <div class="col-lg-6 mx-auto">
-            <p class="lead mb-4">We aim for sustainable garments</p>
+        <h1 class="display-5 fw-bold text-white">Garment Quality Feedback</h1><br>
+        <img src="https://files.hm.com/share/assets/2020/9501/images/1b45ace6c11e706b82098fa8a149cc1d.gif"
+             alt="Cannot display image" width="580px"> <!--https://www.icex.es/icex/wcm/idc/groups/public/documents/imagen/mde4/nzk5/~edisp/img2018799073.jpgv-->
+        <br><br><br>
+        <div class="boxwhite">
+            <br><p class="h3 text-dark">We aim for sustainable garments.<br>Please share your feedback on the quality, both positive and negative during the garments entire lifecycle. Your feedback will help us to produce consciously and promote sustainable fashion.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            <div class="justify-content-sm-center">
+                <br><br>
+                <a href="/form" type="button" class="btn btn-danger btn-lg px-4 me-sm-3">Give Feedback</a><br><br>
+            </div>
+        </div>
+    </div>
+</div>
+<!--
+<div class="container">
+    <div class="px-4 py-5 my-5 text-center">
+        <h1 class="display-5 fw-bold text-light">Garment Quality Feedback</h1><br>
+        <img src="https://www.icex.es/icex/wcm/idc/groups/public/documents/imagen/mde4/nzk5/~edisp/img2018799073.jpg"
+             alt="Cannot display image" width="500px"><br><br><br>
+        <div class="col- mx-auto">
+            <h2 class="display-7 text-light">We aim for sustainable garments.<br>Please help us with your feedback,<br>both positive and negative, <br>during the garments full lifecycle.</h2>
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
                 <a href="/form" type="button" class="btn btn-danger btn-lg px-4 me-sm-3">Give Feedback</a><br>
             </div>
         </div>
     </div>
 </div>
+-->
 </body>
 </html>
