@@ -25,11 +25,13 @@ Week 35:
 - Feedbacks form should have Age of Garment as descriptive text instead of numbers, same for usage level. -Done
 - Validation on the Product Number tab to enter only numbers and 7 + digits
 
-  
-Week 36:
 
-- Final Presentation - Pictures (Why-page), Why did we select the 5 quality meassurements. 
-    - Presentation of the application - From a user perspective and a employee
-- Refactor thankYou.html and StyleChart.css to lower cases
-- Deploy to Azure 
+Week 36:
+- Final Presentation - Pictures (Why-page) What problem does it solve and user stories.
+  -Why did we select the 5 quality measurements - Done
+  - Presentation of the application - From a user perspective and an employee
+- Deploy to Azure
 - Dress rehearsals
+- Validation on the Product Number tab to enter only numbers and 7 + digits
+- Change the Age of Garment new to 0-3 and also add +24 months
+- 
