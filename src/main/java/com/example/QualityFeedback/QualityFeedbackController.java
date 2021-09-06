@@ -26,7 +26,7 @@ public class QualityFeedbackController {
     @GetMapping("/form")
     public String add(Model model) {
         Feedback feedback = new Feedback();
-        feedback.ageOfGarment = "New";
+        feedback.ageOfGarment = "0-3";
         feedback.levelOfUse = "Never";
         model.addAttribute("feedback", feedback);
         return "form";
@@ -55,8 +55,11 @@ public class QualityFeedbackController {
     @PostMapping("/saveFeedback")
     public String set(@ModelAttribute Feedback feedback) {
         feedback.setDateSubmitted(LocalDate.now().toString());
-        feedbackRepository.save(feedback);
-        return "thankyou";
+        if (feedback.productNumber.length() == 7){
+            feedbackRepository.save(feedback);
+            return "thankyou";
+        }
+        return "redirect:/form";
     }
 
 // Admin user login out
