@@ -15,7 +15,6 @@
         body {
             font-family: "HM Sans Georgian Light", "HM Sans", Arial;
         }
-
     </style>
 </head>
 <body>
@@ -58,38 +57,18 @@
     </h3>
     <br>
     <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
-    <p hidden id="colorAvg">
-    <th th:text="${feedbackAverage.colorAverage}"></th>
-    </p>
-    <p hidden id="seamAvg">
-    <th th:text="${feedbackAverage.seamAverage}"></th>
-    </p>
-    <p hidden id="printAvg">
-    <th th:text="${feedbackAverage.printAverage}"></th>
-    </p>
-    <p hidden id="shrinkageAvg">
-    <th th:text="${feedbackAverage.shrinkageAverage}"></th>
-    </p>
-    <p hidden id="materialAvg">
-    <th th:text="${feedbackAverage.materialAverage}"></th>
-    </p>
-
+    <p hidden id="colorAvg"><th th:text="${feedbackAverage.colorAverage}"></th></p>
+    <p hidden id="seamAvg"><th th:text="${feedbackAverage.seamAverage}"></th></p>
+    <p hidden id="printAvg"><th th:text="${feedbackAverage.printAverage}"></th></p>
+    <p hidden id="shrinkageAvg"><th th:text="${feedbackAverage.shrinkageAverage}"></th></p>
+    <p hidden id="materialAvg"><th th:text="${feedbackAverage.materialAverage}"></th></p>
 </div>
 <script>
 var colorValue = document.getElementById("colorAvg").innerHTML;
-console.log("colorValue " +colorValue);
-
 var seamValue = document.getElementById("seamAvg").innerHTML;
-console.log("seamValue " +seamValue);
-
 var printValue = document.getElementById("printAvg").innerHTML;
-console.log("printValue " +printValue);
-
 var shrinkageValue = document.getElementById("shrinkageAvg").innerHTML;
-console.log("shrinkageValue " +shrinkageValue);
-
 var materialValue = document.getElementById("materialAvg").innerHTML;
-console.log("materialValue " +materialValue);
 
 var xValues = ["Color","Seam","Print","Shrinkage","Material"];
 var yValues = [colorValue,seamValue,printValue,shrinkageValue,materialValue];
@@ -113,7 +92,6 @@ new Chart("myChart", {
     }
   }
 });
-
 </script>
 </body>
 </html>
