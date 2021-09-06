@@ -3,11 +3,11 @@ package com.example.QualityFeedback;
 import java.util.List;
 
 public class FeedbackAverage {
-    Double colorAverage;
-    Double seamAverage;
-    Double printAverage;
-    Double shrinkageAverage;
-    Double materialAverage;
+    String colorAverage;
+    String seamAverage;
+    String printAverage;
+    String shrinkageAverage;
+    String materialAverage;
     Integer noOfFeedbacks;
 
     public FeedbackAverage(List<Feedback> feedbacks) {
@@ -26,50 +26,59 @@ public class FeedbackAverage {
         }
 
         this.noOfFeedbacks = feedbacks.size();
-        this.colorAverage = Double.valueOf(colorSum)/this.noOfFeedbacks;
-        this.seamAverage = Double.valueOf(seamSum)/this.noOfFeedbacks;
-        this.printAverage = Double.valueOf(printSum)/this.noOfFeedbacks;
-        this.shrinkageAverage = Double.valueOf(shrinkageSum)/this.noOfFeedbacks;
-        this.materialAverage = Double.valueOf(materialSum)/this.noOfFeedbacks;
+
+        Double colorAverageDouble = Double.valueOf(colorSum)/this.noOfFeedbacks;
+        this.colorAverage = String.format("%.2f", Math.round(colorAverageDouble * 100.0)/100.0).replace(",", ".");
+
+        Double seamAverageDouble = Double.valueOf(seamSum)/this.noOfFeedbacks;
+        this.seamAverage = String.format("%.2f", Math.round(seamAverageDouble * 100.0)/100.0).replace(",", ".");
+
+        Double printAverageDouble = Double.valueOf(printSum)/this.noOfFeedbacks;
+        this.printAverage = String.format("%.2f", Math.round(printAverageDouble * 100.0)/100.0).replace(",", ".");
+
+        Double shrinkageAverageDouble = Double.valueOf(shrinkageSum)/this.noOfFeedbacks;
+        this.shrinkageAverage = String.format("%.2f", Math.round(shrinkageAverageDouble * 100.0)/100.0).replace(",", ".");
+
+        Double materialAverageDouble = Double.valueOf(materialSum)/this.noOfFeedbacks;
+        this.materialAverage = String.format("%.2f", Math.round(materialAverageDouble * 100.0)/100.0).replace(",", ".");
     }
 
-    public Double getColorAverage() {
+
+    public String getColorAverage() {
         return colorAverage;
     }
 
-    public void setColorAverage(Double colorAverage) {
+    public void setColorAverage(String colorAverage) {
         this.colorAverage = colorAverage;
     }
 
-    public Double getSeamAverage() {
-        return seamAverage;
-    }
+    public String getSeamAverage() { return seamAverage; }
 
-    public void setSeamAverage(Double seamAverage) {
+    public void setSeamAverage(String seamAverage) {
         this.seamAverage = seamAverage;
     }
 
-    public Double getPrintAverage() {
+    public String getPrintAverage() {
         return printAverage;
     }
 
-    public void setPrintAverage(Double printAverage) {
+    public void setPrintAverage(String printAverage) {
         this.printAverage = printAverage;
     }
 
-    public Double getShrinkageAverage() {
+    public String getShrinkageAverage() {
         return shrinkageAverage;
     }
 
-    public void setShrinkageAverage(Double shrinkageAverage) {
+    public void setShrinkageAverage(String shrinkageAverage) {
         this.shrinkageAverage = shrinkageAverage;
     }
 
-    public Double getMaterialAverage() {
+    public String getMaterialAverage() {
         return materialAverage;
     }
 
-    public void setMaterialAverage(Double materialAverage) {
+    public void setMaterialAverage(String materialAverage) {
         this.materialAverage = materialAverage;
     }
 
