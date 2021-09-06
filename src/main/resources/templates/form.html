@@ -30,8 +30,7 @@
 <!-- Navigation bar, only the H&M logo on this page -->
 <nav class="navbar navbar-expand-lg navbar-white bg-white">
     <div class="container-fluid">
-        <a href="/"><img src="https://logos-world.net/wp-content/uploads/2020/04/HM-Logo.png" alt="H&M Logo"
-                         width="100px"></a>
+        <a href="/"><img src="https://logos-world.net/wp-content/uploads/2020/04/HM-Logo.png" alt="H&M Logo" width="100px"></a>
     </div>
 </nav>
 
@@ -41,8 +40,8 @@
     <form name="myForm" action="/saveFeedback" th:object="${feedback}" onsubmit="return validateForm()" method="POST">
         <b>Product Number (P/N): </b>
         <a href="../static/images/productnumhelp.html" th:href="'/images/productnumhelp.html'"
-           onclick="javascript:void window.open('/images/productnumhelp.html','1630325025338','width=600,height=600,toolbar=0,menubar=0,location=0,status=0,scrollbars=0,resizable=1,left=0,top=0');return false;"><img
-                src="https://cdn.icon-icons.com/icons2/1674/PNG/512/questionmarkcircle_110957.png" width="25px"></a>
+           onclick="javascript:void window.open('/images/productnumhelp.html','1630325025338','width=600,height=600,toolbar=0,menubar=0,location=0,status=0,scrollbars=0,resizable=1,left=0,top=0');return false;">
+            <img src="https://cdn.icon-icons.com/icons2/1674/PNG/512/questionmarkcircle_110957.png" width="25px"></a>
         <br><input type="text" size="28" minlength="7" maxlength="7" th:field="*{productNumber}" required><br><br>
         <b>Garment Type:</b><br>
         <select th:field="*{garmentType}" style="width:257px" required>
@@ -86,27 +85,15 @@
 
         <!-- Quality measurements, allow input of values 1, 2, 3, 4 or 5 -->
         <h5>How do you perceive the quality of the garment based on below: </h5><br>
-        <b>Color:</b><br>
-        Poor <input type="range" style="width: 500px;" id="color" name="color" min="1" max="5" th:field="*{color}">
-        Great<br><br>
-        <b>Seam:</b><br>
-        Poor <input type="range" style="width: 500px;" id="seam" name="seam" min="1" max="5" th:field="*{seam}"> Great
-        <br><br>
-        <b>Print:</b><br>
-        Poor <input type="range" style="width: 500px;" id="print" name="print" min="1" max="5" th:field="*{print}">
-        Great <br><br>
-        <b>Shrinkage:</b><br>
-        Poor <input type="range" style="width: 500px;" id="shrinkage" name="shrinkage" min="1" max="5"
-                    th:field="*{shrinkage}"> Great <br><br>
-        <b>Material:</b><br>
-        Poor <input type="range" style="width: 500px;" id="material" name="material" min="1" max="5"
-                    th:field="*{material}"> Great <br><br>
+        <b>Color:</b><br>Poor <input type="range" style="width: 500px;" id="color" name="color" min="1" max="5" th:field="*{color}">Great<br><br>
+        <b>Seam:</b><br>Poor <input type="range" style="width: 500px;" id="seam" name="seam" min="1" max="5" th:field="*{seam}"> Great<br><br>
+        <b>Print:</b><br>Poor <input type="range" style="width: 500px;" id="print" name="print" min="1" max="5" th:field="*{print}">Great<br><br>
+        <b>Shrinkage:</b><br>Poor <input type="range" style="width: 500px;" id="shrinkage" name="shrinkage" min="1" max="5" th:field="*{shrinkage}"> Great <br><br>
+        <b>Material:</b><br>Poor <input type="range" style="width: 500px;" id="material" name="material" min="1" max="5" th:field="*{material}"> Great <br><br>
         <b>Additional comments:</b><br><textarea rows="3" cols="73" name="comment" th:field="*{comment}"></textarea><br><br>
 
         <!-- Button to save Quality feedback -->
-        <!--input type="submit" class="btn btn-danger btn-lg px-4 me-sm-3" value="Save"-->
         <button onclick="validateForm()" class="btn btn-danger btn-lg px-4 me-sm-3">Save</button>
-
     </form>
 </div>
 </body>
