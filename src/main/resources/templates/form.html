@@ -47,7 +47,7 @@
         <a href="../static/images/productnumhelp.html" th:href="'/images/productnumhelp.html'"
            onclick="javascript:void window.open('/images/productnumhelp.html','1630325025338','width=540,height=620,toolbar=0,menubar=0,location=0,status=0,scrollbars=0,resizable=1,left=0,top=0');return false;">
             <img src="https://cdn.icon-icons.com/icons2/1674/PNG/512/questionmarkcircle_110957.png" width="25px"></a>
-        <br><input type="text" size="28" minlength="7" maxlength="7" th:field="*{productNumber}" required><br><a href="#" target="_blank" id="my-link" onclick="validateProductNumber()">Take me to the product</a><br><br>
+        <br><input type="text" size="28" minlength="7" maxlength="7" th:field="*{productNumber}" required><br><a href="#" onclick="validateProductNumber()">Take me to the product</a><br><br>
         <!--  <button onclick="validateProductNumber()" class="btn btn-danger btn-lg px-4 me-sm-3">Take me to the product</button> -->
         <b>Garment Type:</b><br>
         <select th:field="*{garmentType}" style="width:257px" required>
