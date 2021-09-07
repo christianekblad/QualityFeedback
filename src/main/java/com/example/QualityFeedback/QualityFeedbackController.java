@@ -58,7 +58,6 @@ public class QualityFeedbackController {
 
         List<Feedback> feedbacks = (List<Feedback>) feedbackRepository.findAll();
         FeedbackTotal feedbackTotal = new FeedbackTotal(feedbacks);
-        System.out.println(feedbackTotal.aprilTotal);
         Integer totalNoOfFeedbacks = feedbacks.size();
 
         model.addAttribute("feedbackTotal", feedbackTotal);

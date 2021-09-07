@@ -29,7 +29,6 @@ public class FeedbackTotal {
         String month;
         for (Feedback feedback:feedbacks) {
             month = feedback.dateSubmitted.substring(5,7);
-            System.out.println(month);
             switch(month) {
                 case "04":
                     aprilTotal++;
