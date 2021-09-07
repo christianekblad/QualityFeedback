@@ -29,6 +29,9 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item"><a class="nav-link link-secondary hover_black" href="/form">GIVE FEEDBACK</a></li>
+
+                <li class="nav-item"><a class="nav-link link-secondary hover_black" href="/nooffeedbacks" >MONTHLY FEEDBACK STATISTICS</a></li>
+
                 <li class="nav-item">
                     <form th:action="@{/logout}" method="post" th:hidden="true" name="logoutForm">
                         <input type="submit" value="Logout" />
@@ -48,7 +51,8 @@
 <div style="width:95%; margin:0 auto;">
     <br><h2>Quality feedback</h2>
     <form action="/feedbacksByProductID" method="get">
-        <label for="productNumber">Search for Product Number:</label><br>
+        <label for="productNumber">Search for Product Number:</label>
+        <br>
         <input type="text" id="productNumber" name="productNumber"><br>
         <input type="submit" value="Search">
         <button type="submit" formaction="/feedbacks">Reset</button>

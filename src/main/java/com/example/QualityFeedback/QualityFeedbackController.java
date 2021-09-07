@@ -36,7 +36,9 @@ public class QualityFeedbackController {
     @GetMapping("/feedbacks")
     public String feedbacks(Model model) {
         List<Feedback> feedbacks = (List<Feedback>) feedbackRepository.findAll();
+        Integer noOfFeedbacks = feedbacks.size();
         model.addAttribute("feedbacks", feedbacks);
+        model.addAttribute("noOfFeedbacks", noOfFeedbacks);
         return "feedbacks";
     }
 
@@ -47,8 +49,22 @@ public class QualityFeedbackController {
         model.addAttribute("productNumber", productNumber);
         FeedbackAverage feedbackAverage = new FeedbackAverage(feedbacks);
         model.addAttribute("feedbackAverage", feedbackAverage);
-//      return "feedbacks";
         return "feedbackchart";
+    }
+
+// Page listing the number of feedbacks given per month.
+    @GetMapping("/nooffeedbacks")
+    public String noOfFeedbacks(Model model) {
+
+        List<Feedback> feedbacks = (List<Feedback>) feedbackRepository.findAll();
+        FeedbackTotal feedbackTotal = new FeedbackTotal(feedbacks);
+        System.out.println(feedbackTotal.aprilTotal);
+        Integer totalNoOfFeedbacks = feedbacks.size();
+
+        model.addAttribute("feedbackTotal", feedbackTotal);
+        model.addAttribute("totalNoOfFeedbacks", totalNoOfFeedbacks);
+
+        return "nooffeedbacks";
     }
 
 // Saving Quality feedback entered for an H&M product
@@ -67,4 +83,5 @@ public class QualityFeedbackController {
     public String logout() {
         return "redirect:/index";
     }
+
 }
