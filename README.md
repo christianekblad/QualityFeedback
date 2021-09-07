@@ -28,10 +28,10 @@ Week 35:
 - Validation on the Product Number tab to enter only numbers and 7 - Done
 - Change the Age of Garment new to 0-3 and also add +24 months - Done
 - Presentation of the application - From a user perspective and an employee - Done
+- Add link to H&M product page - Done
 
 Week 36:
 - Dress rehearsals
-- Add link to H&M product page
 - Present what features we suggest to include in version 2.0
 - Decrease the size of white box on the thank you page
 - Add more charts (line chart number of entered feedback per month, number of feedback received)
