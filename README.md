@@ -17,21 +17,22 @@ Friday:
 
 Week 35:
 - Product number (now it is a new page. We want a popup) - Done
-- Need to adjust the navigation bar. Check the links (blue before login and grey after login )-Done
+- Need to adjust the navigation bar. Check the links (blue before login and grey after login )- Done
 - Validation on the Age of Garment and Level of usage are clicked - Done
 - Prepare the pitch - Done
 - Analyzing the input data received - Done
-
-- Feedbacks form should have Age of Garment as descriptive text instead of numbers, same for usage level. -Done
-- Validation on the Product Number tab to enter only numbers and 7 + digits
-
+- Feedbacks form should have Age of Garment as descriptive text instead of numbers, same for usage level. - Done
+- Validation on the Product Number tab to enter only numbers and 7 + digits - Done
+- Why did we select the 5 quality measurements - Done
+- Final Presentation - Pictures (Why-page) What problem does it solve and user stories. - Done
+- Validation on the Product Number tab to enter only numbers and 7 - Done
+- Change the Age of Garment new to 0-3 and also add +24 months - Done
+- Presentation of the application - From a user perspective and an employee - Done
 
 Week 36:
-- Final Presentation - Pictures (Why-page) What problem does it solve and user stories.
-  -Why did we select the 5 quality measurements - Done
-  - Presentation of the application - From a user perspective and an employee
-- Deploy to Azure
 - Dress rehearsals
-- Validation on the Product Number tab to enter only numbers and 7 + digits
-- Change the Age of Garment new to 0-3 and also add +24 months
-- 
+- Add link to H&M product page
+- Present what features we suggest to include in version 2.0
+- Decrease the size of white box on the thank you page
+- Add more charts (line chart number of entered feedback per month, number of feedback received)
+- Add more data to the database for the demo
