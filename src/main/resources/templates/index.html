@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- Page listing all received Quality feedback -->
 
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Garment Quality Feedback</title>
@@ -47,7 +47,20 @@
                 <li class="nav-item"><a class="nav-link link-secondary hover_black"
                                         href="https://hmgroup.com/sustainability/" target="_blank">H&M GROUP
                     SUSTAINABILITY</a></li>
-                <li class="nav-item"><a class="nav-link link-secondary hover_black" href="/feedbacks">LOGIN</a></li>
+                <div sec:authorize="isAnonymous()">
+                    <li class="nav-item"><a class="nav-link link-secondary hover_black" href="/feedbacks">LOGIN</a></li>
+                </div>
+                <div sec:authorize="isAuthenticated()">
+                    <li class="nav-item"><a class="nav-link link-secondary hover_black" href="/feedbacks">SHOW FEEDBACK</a></li>
+                </div>
+                <div sec:authorize="isAuthenticated()">
+                    <li class="nav-item">
+                        <form th:action="@{/logout}" method="post" th:hidden="true" name="logoutForm">
+                            <input type="submit" value="Logout" />
+                        </form>
+                        <a class="nav-link link-secondary hover_black" href="javascript: document.logoutForm.submit()">LOGOUT</a>
+                    </li>
+                </div>
             </ul>
         </div>
     </div>

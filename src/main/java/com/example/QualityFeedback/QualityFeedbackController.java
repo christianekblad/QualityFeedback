@@ -78,9 +78,12 @@ public class QualityFeedbackController {
     }
 
 // Admin user login out
-    @GetMapping("/logout")
+    /*
+    @PostMapping("/logout")
     public String logout() {
-        return "redirect:/index";
+        System.out.println("hello");
+        return "index";
+        //return "redirect:/index";
     }
-
+*/
 }
